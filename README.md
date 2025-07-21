@@ -1,69 +1,118 @@
-# React + TypeScript + Vite
+# 🚀 JSON Schema Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **A modern, interactive, and extensible tool for visually building and previewing JSON schemas.**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![JSON Schema Builder Banner](https://dummyimage.com/900x200/222/fff&text=JSON+Schema+Builder)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Visual Schema Construction**: Drag, drop, and nest fields to build complex JSON schemas with ease.
+- **Live JSON Preview**: Instantly see the generated JSON as you edit your schema.
+- **Nested Objects**: Support for deeply nested structures and various field types.
+- **Type Safety**: Built with TypeScript for robust developer experience.
+- **Modern UI**: Clean, responsive, and accessible interface powered by React and Tailwind CSS.
+- **Extensible**: Easily add new field types or validation rules.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
+
+- **React** (with Hooks)
+- **TypeScript**
+- **Tailwind CSS**
+- **react-hook-form** (for form state management)
+- **Vite** (for blazing fast dev/build)
+
+---
+
+## 🚦 Quick Start
+
+```bash
+# 1. Clone the repo
+$ git clone https://github.com/Amritkumar01/HROne-Frontend-Assignment-
+$ cd HROne-Frontend-Assignment-
+
+# 2. Install dependencies
+$ npm install
+
+# 3. Start the development server
+$ npm run dev
+
+# 4. Open in your browser
+# Visit http://localhost:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧑‍💻 Usage
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Add Fields**: Click "Add Item" to add a new field.
+- **Edit Fields**: Change the name, type, or required status. Select "nested" to add sub-fields.
+- **Remove Fields**: Click the ❌ icon to delete a field.
+- **Preview**: The right panel always shows the live JSON output.
+
+### Example
+
+```json
+{
+  "name": "STRING",
+  "age": "number",
+  "profile": {
+    "bio": "STRING",
+    "isActive": "boolean"
+  }
+}
 ```
+
+---
+
+## 🏗️ Project Structure
+
+```
+json-schema-builder/
+├── src/
+│   ├── components/
+│   │   └── JsonSchemaBuilder.tsx  # Main builder component
+│   ├── lib/
+│   │   └── utils.ts               # Utility functions
+│   ├── App.tsx                    # App entry
+│   └── ...
+├── public/
+├── package.json
+└── ...
+```
+
+---
+
+## 🤝 Contributing
+
+We love contributions! Here’s how you can help:
+
+1. **Fork** the repo and create your branch: `git checkout -b feature/your-feature`
+2. **Commit** your changes: `git commit -am 'Add new feature'`
+3. **Push** to the branch: `git push origin feature/your-feature`
+4. Create a Pull Request
+
+Please follow the existing code style and add tests where appropriate.
+
+---
+
+## 🧪 Developer Notes
+
+- All form state is managed via `react-hook-form` and updates are fully type-safe.
+- Nested field updates are handled recursively for robust schema editing.
+- The UI is fully responsive and accessible.
+- For custom field types or validation, extend the `SchemaField` type and update the builder logic.
+
+---
+
+## 📄 Made By
+ Amrit Kumar
+
+---
+
+[GitHub Repository](https://github.com/Amritkumar01/HROne-Frontend-Assignment-)
